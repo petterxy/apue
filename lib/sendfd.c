@@ -2,7 +2,9 @@
 #include <sys/socket.h>
 
 /* size of control buffer to send/recv one file descriptor */
+#define	CMSG_LEN(l)		(__DARWIN_ALIGN32(sizeof(struct cmsghdr)) + (l))
 #define	CONTROLLEN	CMSG_LEN(sizeof(int))
+///#define	CONTROLLEN	4///(sizeof(int))
 
 static struct cmsghdr	*cmptr = NULL;	/* malloc'ed first time */
 
