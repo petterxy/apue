@@ -22,7 +22,7 @@ main(int argc, char *argv[])
 		/* and cat to stdout */
 		while ((n = read(fd, buf, BUFFSIZE)) > 0)
 			if (write(STDOUT_FILENO, buf, n) != n)
-				err_sys("write error");
+				err_sys("write error123");
 		if (n < 0)
 			err_sys("read error");
 		close(fd);
